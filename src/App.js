@@ -20,17 +20,15 @@ function App() {
     })
     .then((res) => {
       console.log(res.data);
-      setCapital(res.data.capital)
-      setPopulation(res.data.population)
-      setCurrency(res.data.currencies.name)
-      setLanguage(res.data.languages.name)
-      setFlag(res.data.flag)
+      setCapital(res.data[0].capital)
+      setPopulation(res.data[0].population)
+      setCurrency(res.data[0].currencies[0].name)
+      setLanguage(res.data[0].languages[0].name)
+      setFlag(res.data[0].flag)
     })
     .catch((error) => {
       console.log(error);
     })
-
-    console.log('ji');
   }
 
   return (
@@ -50,9 +48,7 @@ function App() {
           <h2 className="currency">Currency: {currency}</h2>
           <h2 className="language">Language: {language}</h2>
 
-          {/* for the flag */}
-          Flag: {flag}
-          <img src="" alt="" />
+          <img src={flag} alt="" />
         </section>
       </div>
     </>
