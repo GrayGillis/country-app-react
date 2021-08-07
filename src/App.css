@@ -1,0 +1,40 @@
+* {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: #34ebe8;
+}
+
+.header {
+  background-color: #3440eb;
+  font-size: 20px;
+  color: #FFF;
+  margin: 5px 10px 10px 5px;
+  outline-color: #000;
+  outline-style: solid;
+}
+
+.main {
+  padding: 10px;
+  background-color: #eb34e2;
+  border-radius: 360px;
+}
+
+.main button {
+  background-color: #f5f51b;
+}
+
+.main button:hover {
+  opacity: .5;
+}
+
+.body {
+  padding-top: 5px;
+  margin: 10px;
+  background-color: #f5f51b;
+  outline-color: #000;
+  outline-style: solid;
+}
