@@ -14,6 +14,7 @@ function App() {
 
   const getCountryInfo = (country) => {
     // api call
+    console.log('ji');
   }
 
   return (
@@ -22,8 +23,8 @@ function App() {
         <Header />
       </div>
       <div className="main">
-        <input type="text" value="country" onChange={(e) => setCountry(e.target.value)}/>
-        <button onClick={}>Submit</button>
+        <input type="text" value={country} onChange={(e) => setCountry(e.target.value)}/>
+        <button onClick={() => { getCountryInfo(country) }}>Submit</button>
       </div>
       <div className="body">
         <section>
