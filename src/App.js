@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Header from './Header';
+import axios from 'axios';
 
 const api = '';
 
@@ -14,6 +15,7 @@ function App() {
 
   const getCountryInfo = (country) => {
     // api call
+
     console.log('ji');
   }
 
