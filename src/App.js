@@ -3,7 +3,7 @@ import './App.css';
 import Header from './Header';
 import axios from 'axios';
 
-const api = '';
+const api = 'https://restcountries.eu/rest/v2/name/';
 
 function App() {
   const [country, setCountry] = useState('');
@@ -14,7 +14,21 @@ function App() {
   const [flag, setFlag] = useState('');
 
   const getCountryInfo = (country) => {
-    // api call
+    axios({
+      method: 'GET',
+      url: `${api}${country}`
+    })
+    .then((res) => {
+      console.log(res.data);
+      setCapital(res.data.capital)
+      setPopulation(res.data.population)
+      setCurrency(res.data.currencies.name)
+      setLanguage(res.data.languages.name)
+      setFlag(res.data.flag)
+    })
+    .catch((error) => {
+      console.log(error);
+    })
 
     console.log('ji');
   }
@@ -37,6 +51,7 @@ function App() {
           <h2 className="language">Language: {language}</h2>
 
           {/* for the flag */}
+          Flag: {flag}
           <img src="" alt="" />
         </section>
       </div>
