@@ -21,9 +21,11 @@ function App() {
     .then((res) => {
       console.log(res.data);
       setCapital(res.data[0].capital)
+      // need the number to have commas
       setPopulation(res.data[0].population)
       setCurrency(res.data[0].currencies[0].name)
       setLanguage(res.data[0].languages[0].name)
+      // flag comes in really big
       setFlag(res.data[0].flag)
     })
     .catch((error) => {
