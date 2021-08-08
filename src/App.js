@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './Header';
-import Country from './Country';
 import axios from 'axios';
 
 const api = 'https://restcountries.eu/rest/v2/name/';
@@ -22,7 +21,7 @@ function App() {
     return (
       countryEffect()
     )
-  },[country])
+  },[flag])
 
   const changeNumber = newPopulation => {
     let formatNumber = (Number(newPopulation)).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
