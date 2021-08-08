@@ -17,6 +17,15 @@ function App() {
     console.log('new country!');
   },[capital])
 
+  const changeNumber = newPopulation => {
+    let formatNumber = (Number(newPopulation)).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    let splitArray = formatNumber.split('.');
+    if(splitArray.length>1){
+      formatNumber = splitArray[0];
+    }
+    return(formatNumber);
+  };
+
   const getCountryInfo = (country) => {
     axios({
       method: 'GET',
@@ -25,8 +34,8 @@ function App() {
     .then((res) => {
       console.log(res.data);//rest api object
       setCapital(res.data[0].capital)
-      // need the number to have commas
-      setPopulation(res.data[0].population)
+      const newPopulation = res.data[0].population
+      setPopulation(changeNumber(newPopulation))
       setCurrency(res.data[0].currencies[0].name)
       setLanguage(res.data[0].languages[0].name)
       setFlag(res.data[0].flag)
