@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './Header';
+import Country from './Country';
 import axios from 'axios';
 
 const api = 'https://restcountries.eu/rest/v2/name/';
+
+const countryEffect = () => {
+  console.log('country added!')
+}
 
 function App() {
   const [country, setCountry] = useState('');
@@ -14,8 +19,10 @@ function App() {
   const [flag, setFlag] = useState('');
 
   useEffect(() => {
-    console.log('new country!');
-  },[capital])
+    return (
+      countryEffect()
+    )
+  },[country])
 
   const changeNumber = newPopulation => {
     let formatNumber = (Number(newPopulation)).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
@@ -56,6 +63,9 @@ function App() {
       </div>
       <div className="body">
         <section>
+          <h4>
+
+          </h4>
           <h2 className="country">Country: {country}</h2>
           <h2 className="capital">Capital: {capital}</h2>
           <h2 className="population">Population: {population}</h2>
