@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './Header';
 import axios from 'axios';
@@ -13,19 +13,22 @@ function App() {
   const [language, setLanguage] = useState('');
   const [flag, setFlag] = useState('');
 
+  useEffect(() => {
+    console.log('new country!');
+  },[capital])
+
   const getCountryInfo = (country) => {
     axios({
       method: 'GET',
       url: `${api}${country}`
     })
     .then((res) => {
-      console.log(res.data);
+      console.log(res.data);//rest api object
       setCapital(res.data[0].capital)
       // need the number to have commas
       setPopulation(res.data[0].population)
       setCurrency(res.data[0].currencies[0].name)
       setLanguage(res.data[0].languages[0].name)
-      // flag comes in really big
       setFlag(res.data[0].flag)
     })
     .catch((error) => {
