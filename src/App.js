@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Header from './Header';
 import axios from 'axios';
 
 const api = 'https://restcountries.eu/rest/v2/name/';
-
-const countryEffect = () => {
-  console.log('country added!')
-}
 
 function App() {
   const [country, setCountry] = useState('');
@@ -17,12 +13,6 @@ function App() {
   const [language, setLanguage] = useState('');
   const [flag, setFlag] = useState('');
 
-  useEffect(() => {
-    return (
-      countryEffect()
-    )
-  },[flag])
-
   const changeNumber = newPopulation => {
     let formatNumber = (Number(newPopulation)).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
     let splitArray = formatNumber.split('.');
@@ -30,6 +20,12 @@ function App() {
       formatNumber = splitArray[0];
     }
     return(formatNumber);
+  };
+
+  const newCountry = (flag) => {
+    if (flag){
+      return "New Country Added!";
+    }
   };
 
   const getCountryInfo = (country) => {
@@ -63,7 +59,7 @@ function App() {
       <div className="body">
         <section>
           <h4>
-
+            {newCountry(flag)}
           </h4>
           <h2 className="country">Country: {country}</h2>
           <h2 className="capital">Capital: {capital}</h2>
