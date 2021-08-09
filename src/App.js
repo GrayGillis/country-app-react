@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './Header';
 import axios from 'axios';
@@ -27,6 +27,10 @@ function App() {
       return "New Country Added!";
     }
   };
+
+  useEffect(() => {
+    console.log('Welcome to the React Country App from Grayson');
+  }, []);
 
   const getCountryInfo = (country) => {
     axios({
