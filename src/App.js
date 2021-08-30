@@ -46,7 +46,7 @@ function App() {
       setFlag(res.data[0].flag)
     })
     .catch((error) => {
-      alert("Please enter a valid country name");
+      alert("Please enter a valid country name. \n\n Thank you!");
     })
   }
 
