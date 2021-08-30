@@ -44,6 +44,7 @@ function App() {
       setCurrency(res.data[0].currencies[0].name)
       setLanguage(res.data[0].languages[0].name)
       setFlag(res.data[0].flag)
+      setCountry('')
     })
     .catch((error) => {
       alert("Please enter a valid country name. \n\n Thank you!");
