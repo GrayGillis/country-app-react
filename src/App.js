@@ -73,7 +73,6 @@ function App() {
           <h2 className="population">Population: {population}</h2>
           <h2 className="currency">Currency: {currency}</h2>
           <h2 className="language">Language: {language}</h2>
-
           <img src={flag} alt="" />
         </section>
       </div>
