@@ -38,7 +38,6 @@ function App() {
       url: `${api}${country}`
     })
     .then((res) => {
-      console.log(res.data);//rest api object
       setCapital(res.data[0].capital)
       const newPopulation = res.data[0].population
       setPopulation(changeNumber(newPopulation))
@@ -47,7 +46,7 @@ function App() {
       setFlag(res.data[0].flag)
     })
     .catch((error) => {
-      console.log(error);
+      alert("Please enter a valid country name");
     })
   }
 
