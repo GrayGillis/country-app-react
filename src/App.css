@@ -47,3 +47,8 @@ body {
 .body h4 {
   color: red;
 }
+
+.labelCountry {
+  font-weight: 700;
+  font-size: 30px;
+}

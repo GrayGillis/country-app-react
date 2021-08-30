@@ -56,6 +56,7 @@ function App() {
         <Header />
       </div>
       <div className="main">
+        <label className="labelCountry">Country</label> <br />
         <input type="text" value={country} onChange={(e) => setCountry(e.target.value)}/>
         <button onClick={() => { getCountryInfo(country) }}>Submit</button>
       </div>
