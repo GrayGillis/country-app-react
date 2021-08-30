@@ -44,7 +44,6 @@ function App() {
       setCurrency(res.data[0].currencies[0].name)
       setLanguage(res.data[0].languages[0].name)
       setFlag(res.data[0].flag)
-      setCountry('')
     })
     .catch((error) => {
       alert("Please enter a valid country name. \n\n Thank you!");
@@ -58,8 +57,11 @@ function App() {
       </div>
       <div className="main">
         <label className="labelCountry">Country</label> <br />
-        <input type="text" value={country} onChange={(e) => setCountry(e.target.value)}/>
-        <button onClick={() => { getCountryInfo(country) }}>Submit</button>
+
+        <input type="text" value={country} 
+        placeholder="Enter the country name" onChange={(e) => setCountry(e.target.value)}/>
+        
+        <button onClick={() => { getCountryInfo(country) }}> Submit </button>
       </div>
       <div className="body">
         <section>
