@@ -59,8 +59,8 @@ function App() {
         <label className="labelCountry">Country</label> <br />
 
         <input type="text" value={country} 
-        placeholder="Enter the country name" onChange={(e) => setCountry(e.target.value)}/>
-        
+        placeholder="Enter the country name:" onChange={(e) => setCountry(e.target.value)}/>
+
         <button onClick={() => { getCountryInfo(country) }}> Submit </button>
       </div>
       <div className="body">
